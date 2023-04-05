@@ -136,6 +136,15 @@ export const Navigation = styled.nav<IBurgerMenu>`
     display: ${(props) => props.bool};
     justify-content: start;
   }
+
+  @media (max-width: 650px) {
+    z-index: 500;
+    position: fixed;
+    top: 100px; 
+    left: 30px; 
+    display: ${(props) => props.bool};
+    justify-content: start;
+  }
 `;
 
 export const SpacerVertical = styled.div`
@@ -189,7 +198,6 @@ export const List = styled.div`
   }
 
   @media (max-width: 630px) {
-    margin-top: 120px;
     gap: 30px;
     font-size: 24px;
   }
