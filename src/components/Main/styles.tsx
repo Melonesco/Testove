@@ -27,9 +27,11 @@ export const Wrapper = styled.div<IBurgerMenu>`
   @media (max-width: 830px) {
     width: 100%;
     display: ${(props) => props.bool};
-    background-color: rgba(40, 39, 42, 1);
-    //z-index: 30;
-    //position: fixed;
+    background-color: rgba(40, 39, 42, 0.8);
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    z-index: 6;
   }
 `;
 
@@ -38,7 +40,7 @@ interface IBurgerMenu {
 }
 
 export const BlockClick = styled.div`
-  position: absolute;
+  position: fixed;
   right: 30px;
   top: 24px;
   z-index: 50;
@@ -47,6 +49,7 @@ export const BlockClick = styled.div`
 export const BurgerMenu = styled.img<IBurgerMenu>`
   width: 30px;
   height: 30px;
+  display: none;
 
   @media (max-width: 830px) {
     display: ${(props) => props.bool};
@@ -56,6 +59,7 @@ export const BurgerMenu = styled.img<IBurgerMenu>`
 export const CloseIcon = styled.img<IBurgerMenu>`
   width: 30px;
   height: 30px;
+  display: none;
 
   @media (max-width: 830px) {
     display: ${(props) => props.bool};
@@ -76,6 +80,10 @@ export const HeaderInner = styled.div`
   display: flex;
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
+  
+  @media (max-width: 830px) {
+    display: block;
+  }
 `;
 
 export const LogoContainer = styled.div<IBurgerMenu>`
@@ -95,14 +103,17 @@ export const LogoContainer = styled.div<IBurgerMenu>`
   }
 
   @media (max-width: 830px) {
+    position: fixed;
+    top: 0;
+    left: 0;
     max-width: 200px;
     padding: 24px;
-    z-index: 40;
+    z-index: 50;
     display: ${(props) => props.bool};
   }
 `;
 
-export const Navigation = styled.nav`
+export const Navigation = styled.nav<IBurgerMenu>`
   align-items: center;
   display: flex;
   gap: 64px;
@@ -118,7 +129,12 @@ export const Navigation = styled.nav`
   }
 
   @media (max-width: 830px) {
-    display: none;
+    z-index: 500;
+    position: fixed;
+    top: 24px;
+    left: 230px;
+    display: ${(props) => props.bool};
+    justify-content: start;
   }
 `;
 
@@ -187,11 +203,16 @@ export const AdjacentSibling = styled.div`
   left: 180px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 100;
+  z-index: 
+      100;
   transition: all 0.8s ease;
 
   @media (max-width: 1550px) {
     left: 150px;
+  }
+
+  @media (max-width: 830px) {
+    left: 500px;
   }
 `;
 
@@ -205,6 +226,10 @@ export const NavItem = styled.div`
 
   &:hover ${AdjacentSibling} {
     width: 100px;
+    
+    @media (max-width: 830px) {
+      width: 500px;
+    }
   }
 `;
 
@@ -339,7 +364,7 @@ export const SliderContent = styled.div`
   @media (max-width: 1000px) {
     margin-left: 250px;
     margin-right: 30px;
-    z-index: 20;
+    z-index: 5;
   }
 
   @media (max-width: 1000px) {

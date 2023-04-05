@@ -13,7 +13,7 @@ const Header = ({ isModal }: IHeader) => {
           <S.LogoContainer bool={!isModal ? "none" : "block"}>
             <GlobalLogo>trppd</GlobalLogo>
           </S.LogoContainer>
-          <S.Navigation>
+          <S.Navigation bool={!isModal ? "none" : "flex"}>
             <S.NavItem>My Collection</S.NavItem>
             <S.SpacerVertical />
             <S.ProfileWrapper>

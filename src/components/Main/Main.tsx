@@ -5,13 +5,13 @@ import SliderContainer from "./Layout/SliderContainer";
 import List from "./Layout/List";
 import SliderContent from "./Layout/SliderContent";
 import { DirectionSlider } from "utils/types";
-import * as S from "./styles";
 import menu from "assets/image/menu.png";
 import close from "assets/image/close.png";
+import * as S from "./styles";
 
 const Main: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isModal, setIsModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
   const handleButtonClick = (direction: DirectionSlider) => {
     if (direction === DirectionSlider.Left) {
@@ -25,25 +25,27 @@ const Main: React.FC = () => {
     }
   };
 
-  const modalOpen = () => {
-    setIsModal(true);
-  };
+    const handleOpenModal = () => {
+        setShowModal(true);
+        document.body.style.overflow = 'hidden';
+    };
 
-  const modalClose = () => {
-    setIsModal(false);
-  };
+    const handleCloseModal = () => {
+        setShowModal(false);
+        document.body.style.overflow = 'auto';
+    };
 
   return (
     <S.Main>
-      <Header isModal={isModal} />
-      <S.Wrapper bool={!isModal ? "none" : "block"}>
+      <Header isModal={showModal} />
+      <S.Wrapper bool={!showModal ? "none" : "block"}>
         <List />
       </S.Wrapper>
-      <S.BlockClick onClick={modalOpen}>
-        <S.BurgerMenu src={menu} bool={isModal ? "none" : "block"} alt="img" />
+      <S.BlockClick onClick={handleOpenModal}>
+        <S.BurgerMenu src={menu} bool={showModal ? "none" : "block"} alt="img" />
       </S.BlockClick>
-      <S.BlockClick onClick={modalClose}>
-        <S.CloseIcon src={close} alt="img" bool={!isModal ? "none" : "block"} />
+      <S.BlockClick onClick={handleCloseModal}>
+        <S.CloseIcon src={close} alt="img" bool={!showModal ? "none" : "block"} />
       </S.BlockClick>
       <S.Slider>
         <SliderContainer currentSlide={currentSlide} />
