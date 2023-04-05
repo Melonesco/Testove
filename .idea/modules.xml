@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/max_test.iml" filepath="$PROJECT_DIR$/.idea/max_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Testove.iml" filepath="$PROJECT_DIR$/.idea/Testove.iml" />
     </modules>
   </component>
 </project>
