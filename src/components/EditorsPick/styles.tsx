@@ -121,9 +121,12 @@ export const Numbers = styled.p`
   }
 `;
 
-export const Sort = styled.div`
+export const SortBlock = styled.div`
   background-color: ${COLORS.mainDark};
   padding: 0 30px;
+`;
+
+export const Sort = styled.div`
   font-weight: bold;
   cursor: pointer;
 
@@ -134,6 +137,53 @@ export const Sort = styled.div`
   @media (max-width: 650px) {
     padding: 10px;
   }
+`;
+
+export const ModalWrapper = styled.div`
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  border-radius: 8px;
+  top: -200px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+`;
+
+export const Modal = styled.div`
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+`;
+
+export const ModalCountry = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+`;
+
+export const Country = styled.p`
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: bold;
 `;
 
 export const SliderContainer = styled.div`

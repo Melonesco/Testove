@@ -28,8 +28,8 @@ export const Wrapper = styled.div<IBurgerMenu>`
     width: 100%;
     display: ${(props) => props.bool};
     background-color: rgba(40, 39, 42, 0.8);
-    position: fixed; 
-    top: 0; 
+    position: fixed;
+    top: 0;
     left: 0;
     z-index: 6;
   }
@@ -44,6 +44,7 @@ export const BlockClick = styled.div`
   right: 30px;
   top: 24px;
   z-index: 50;
+  cursor: pointer;
 `;
 
 export const BurgerMenu = styled.img<IBurgerMenu>`
@@ -80,7 +81,7 @@ export const HeaderInner = styled.div`
   display: flex;
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
-  
+
   @media (max-width: 830px) {
     display: block;
   }
@@ -140,8 +141,8 @@ export const Navigation = styled.nav<IBurgerMenu>`
   @media (max-width: 650px) {
     z-index: 500;
     position: fixed;
-    top: 100px; 
-    left: 30px; 
+    top: 100px;
+    left: 30px;
     display: ${(props) => props.bool};
     justify-content: start;
   }
@@ -211,8 +212,7 @@ export const AdjacentSibling = styled.div`
   left: 180px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 
-      100;
+  z-index: 100;
   transition: all 0.8s ease;
 
   @media (max-width: 1550px) {
@@ -234,7 +234,7 @@ export const NavItem = styled.div`
 
   &:hover ${AdjacentSibling} {
     width: 100px;
-    
+
     @media (max-width: 830px) {
       width: 500px;
     }
